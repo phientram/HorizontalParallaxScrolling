@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HorizontalParallaxScrolling" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZi-PN-Cno" userLabel="ImageScrollView">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parallax-road.png" translatesAutoresizingMaskIntoConstraints="NO" id="auz-NC-S6Y">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="568"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="auz-NC-S6Y" secondAttribute="bottom" id="4qQ-6w-aTs"/>
+                                    <constraint firstAttribute="trailing" secondItem="auz-NC-S6Y" secondAttribute="trailing" id="83F-bp-UkH"/>
+                                    <constraint firstItem="auz-NC-S6Y" firstAttribute="leading" secondItem="PZi-PN-Cno" secondAttribute="leading" id="THO-k6-pj7"/>
+                                    <constraint firstItem="auz-NC-S6Y" firstAttribute="top" secondItem="PZi-PN-Cno" secondAttribute="top" id="XU5-ug-Qcp"/>
+                                </constraints>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDD-aX-IPH" userLabel="ContentScrollView">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <subviews>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKn-xY-nRK">
+                                        <rect key="frame" x="0.0" y="0.0" width="640" height="568"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1N-aN-5Rc">
+                                                <rect key="frame" x="48" y="36" width="143" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQr-xu-CTv">
+                                                <rect key="frame" x="346" y="74" width="143" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="640" id="0Mt-Ph-Pue"/>
+                                            <constraint firstAttribute="height" constant="128" id="f65-rO-tXu"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="f65-rO-tXu"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="pKn-xY-nRK" secondAttribute="trailing" id="0xa-ca-2kR"/>
+                                    <constraint firstAttribute="bottom" secondItem="pKn-xY-nRK" secondAttribute="bottom" id="Iie-Zq-cRN"/>
+                                    <constraint firstItem="pKn-xY-nRK" firstAttribute="leading" secondItem="MDD-aX-IPH" secondAttribute="leading" id="KJo-bV-T7a"/>
+                                    <constraint firstItem="pKn-xY-nRK" firstAttribute="top" secondItem="MDD-aX-IPH" secondAttribute="top" id="iPe-3H-zto"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="CAz-Za-PjJ"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="auz-NC-S6Y" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="GQB-GX-Spc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MDD-aX-IPH" secondAttribute="bottom" id="MCn-VI-vPJ"/>
+                            <constraint firstItem="MDD-aX-IPH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nhe-NR-9Ps"/>
+                            <constraint firstItem="pKn-xY-nRK" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="SIp-mr-WMM"/>
+                            <constraint firstAttribute="trailing" secondItem="MDD-aX-IPH" secondAttribute="trailing" id="TwP-BO-iLo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PZi-PN-Cno" secondAttribute="bottom" id="cjr-bk-qOU"/>
+                            <constraint firstItem="MDD-aX-IPH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="g7B-fD-t8y"/>
+                            <constraint firstItem="PZi-PN-Cno" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hCj-mV-1Gs"/>
+                            <constraint firstItem="PZi-PN-Cno" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="mp1-v9-pmb"/>
+                            <constraint firstAttribute="trailing" secondItem="PZi-PN-Cno" secondAttribute="trailing" id="pM1-bc-LQc"/>
+                            <constraint firstItem="auz-NC-S6Y" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="wSp-Bz-876"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GQB-GX-Spc"/>
+                                <exclude reference="wSp-Bz-876"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="contentScrollView" destination="MDD-aX-IPH" id="5Ua-1S-aoO"/>
+                        <outlet property="imageScrollView" destination="PZi-PN-Cno" id="j43-2w-lX6"/>
+                        <outlet property="imageView" destination="auz-NC-S6Y" id="kQv-VD-keX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="297" y="429"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="parallax-road.png" width="400" height="568"/>
+    </resources>
+</document>
